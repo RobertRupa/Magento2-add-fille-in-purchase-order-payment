@@ -1,0 +1,58 @@
+.file-uploader{
+    .file-uploader-area{
+        display: inline-block;
+        position: relative;
+        .file-uploader-button{
+            &.action-secondary{
+                display:inline-block;
+                color:#444;
+                border:1px solid #CCC;
+                background:#DDD;
+                box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+                cursor:pointer;
+                vertical-align:middle;
+                max-width: 100px;
+                padding: 5px;
+                text-align: center;
+                &:active{
+                    color:red;
+                    box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+                }
+            }
+        }
+        .file-uploader-spinner{
+            position: absolute;
+            display: none;
+            background-color: rgba(0,0,0,0.5);
+            width: 100%;
+            height: 100%;
+        }
+        .file-uploader-button{
+            &.error{
+                border-color: red;
+            }
+        }
+    }
+    .file-uploader-summary{
+        display: inline-block;
+    }
+    span.error{
+        display: block;
+        margin: 5px 0 0 10px;
+        font-weight: 700;
+        color: #e02b27;
+        font-size: 1.2rem;
+        display:none;
+    }
+}
+div[name="PoAttachmentForm.upload"]{
+    display: flow-root;
+    padding: 0px 4px;
+    >label{
+        >span{
+            color: #000000;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+    }
+}

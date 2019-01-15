@@ -1,0 +1,38 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!--Preference section-->
+
+    <!--Dependency injection configuration that tell ObjectManager which class should be injected-->
+    <!--if a constructor has dependency from "for".-->
+
+    <preference for="Sintra\POEmailAttachment\Api\Data\PoAttachmentInterface"
+                type="Sintra\POEmailAttachment\Model\PoAttachment" />
+
+    <preference for="Sintra\POEmailAttachment\Api\Data\PoAttachmentRepositoryInterface"
+                type="Sintra\POEmailAttachment\Model\PoAttachmentRepository" />
+
+    <!--End of preference section-->
+
+    <!--UI component listing data providers section-->
+    <!--Virtual type is a class that doesn't exist as a file but can be injected if necessary. We define the data providers-->
+    <!--for our listing, filters pools collections used by the listing.-->
+    <!--End of UI component listing data providers section-->
+
+    <!--Logger virtual type-->
+    <!--End of logger virtual type-->
+    
+    <!--Dependency injection section-->
+    <!--End of dependency injection section-->
+
+    <!--Plugins section-->
+
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+         <plugin name="add_po_attachment_to_checkout" type="Sintra\POEmailAttachment\Plugin\Checkout\LayoutProcessorPlugin" sortOrder="5"/>
+     </type>
+
+    <!--End of plugins section-->
+
+    <!--Console commands section-->
+    <!--End of console commands section-->
+
+</config>

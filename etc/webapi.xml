@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <!--Here you can define custom REST/SOAP Api routes and the implementations.-->
+    <!--ACL resources can be specified to limit access to the endpoints.-->
+    <route method="GET" url="/V1/poemailattachment/:id">
+        <service class="Sintra\POEmailAttachment\Api\Data\PoAttachmentRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/poemailattachment/getByQuoteId/:id">
+        <service class="Sintra\POEmailAttachment\Api\Data\PoAttachmentRepositoryInterface" method="getByQuoteId"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/poemailattachment/getByOrderId/:id">
+        <service class="Sintra\POEmailAttachment\Api\Data\PoAttachmentRepositoryInterface" method="getByOrderId"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <!--API endpoints for saving sample data in checkout-->
+
+</routes>
